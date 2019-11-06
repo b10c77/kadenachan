@@ -245,4 +245,4 @@ class KadenaChanClient(discord.Client):
             await asyncio.sleep(30)
 
 client = KadenaChanClient()
-client.run(TOKEN)
+client.run(KADENA_CHAN_TOKEN)
