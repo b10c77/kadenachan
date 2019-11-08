@@ -28,6 +28,8 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
+# These nodes were THE ONLY properly working nodes on 10/08/2019 (properly
+# configured with a certificate). Giving them some credit here.
 BIGCHUNGA = [
     ('kadena1.block77.io', 443),
     ('kadena1.dzy.lv', 443),
@@ -35,7 +37,7 @@ BIGCHUNGA = [
     ('kadena2.banteg.xyz', 1337),
     ('kadena420.taonacoin.com', 443),
     ('kadena69.taonacoin.com', 443),
-    
+
     ('brudda.bigchungusmining.energy', 443),
     ('bigchungusmining.energy', 31337),
     ('bigchungusmining.energy', 31336),
@@ -321,7 +323,7 @@ class KadenaChanClient(discord.Client):
             for (host, port), (height, ip, coordinator, country, weight) in ptable:
                 if len(host) > 23:
                     host = host[:10] + ('... (%s)' % ip)
-                
+
                 table.append([str(x) for x in [
                     country,
                     host + ':' + str(port),
